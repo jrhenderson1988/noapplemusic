@@ -23,6 +23,6 @@ fn main() {
 fn is_target(process: &Process) -> bool {
     match process.cmd().first() {
         Some(command) => command.to_lowercase().contains(TARGET_PROCESS),
-        None => false
+        None => false,
     }
 }
