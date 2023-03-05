@@ -13,8 +13,8 @@ if [[ "$MATCHES" != "1" ]]; then
 fi
 
 TAG="v$VERSION"
-if [[ "$(git tag -l | grep -c "$TAG")" != "0" ]]; then
-  echo "Tag '$TAG' already exists, skipping release"
+if [[ "$(git ls-remote --tags -q | grep -c "refs/tags/$TAG")" != "0" ]]; then
+  echo "Tag '$TAG' already exists, will not tag again"
   exit 0
 fi
 
