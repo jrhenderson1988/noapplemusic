@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-VERSION=$(cat Cargo.toml | grep -E 'version = \"\d+\.\d+\.\d+\"' | awk '{split($0, a, "\""); print a[2]}')
+VERSION=$(grep -E '^version\s*=\s*"[0-9]+\.[0-9]+\.[0-9]+"$' Cargo.toml | awk '{split($0, a, "\""); print a[2]}')
 if [ -z "$VERSION" ]; then
   echo "Could not find version in Cargo.toml"
   exit 1

@@ -12,7 +12,7 @@ jobs:
       - name: Update local toolchain
         run: |
           rustup update
-          rustup install stable          
+          rustup install stable
 
       - name: Toolchain info
         run: |
@@ -25,7 +25,7 @@ jobs:
 
       - name: Test
         run: |
-          cargo test --all          
+          cargo test --all
 
       - name: Build
         run: |
